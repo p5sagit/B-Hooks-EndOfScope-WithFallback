@@ -1,8 +1,8 @@
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More;
 
-use B::Hooks::EndOfScope;
+use B::Hooks::EndOfScope::WithFallback;
 
 our $called;
 
@@ -16,3 +16,5 @@ sub foo {
 BEGIN {
     ok($called, 'callback invoked');
 }
+
+done_testing;

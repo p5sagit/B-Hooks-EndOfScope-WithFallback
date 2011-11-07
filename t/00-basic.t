@@ -1,8 +1,8 @@
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More;
 
-BEGIN { use_ok('B::Hooks::EndOfScope') }
+BEGIN { use_ok('B::Hooks::EndOfScope::WithFallback') }
 
 BEGIN {
     ok(exists &on_scope_end, 'on_scope_end imported');
@@ -28,3 +28,5 @@ BEGIN {
 }
 
 foo();
+
+done_testing;
